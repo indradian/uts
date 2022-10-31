@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,21 +26,42 @@ header {
   width: 200px;
   height: 50px;
 }
-.nav_links {
+.nav-bar-sub{
+  display: flex;
+}
+.logo {
+  cursor: pointer;
+  margin-right: auto;    
+}
+.logo-picture{
+  width: 200px;
+  height: 50px; 
+}
+.nav-links {
   list-style: none;
 }
-.nav_links li {
+.nav-links li {
   display: inline-block;
+  margin-top: 2%;
   padding: 0px 20px;
 }
-.nav_links li a {
+.nav-links li a {
   transition: all 0.3s ease 0s; 
 }
-.nav_links li a:hover { 
+.nav-links li a:hover { 
   color: #17e417;
   border: none;
 }
-.btn1, #profile-txt{
+.bar-btn{
+  cursor: pointer;
+  display: none;
+}
+.icon-1{
+  width: 30px ;
+  height: 30px;
+  margin-top: 3px;
+}
+.btn1, .profile-txt{
   padding: 8px 20px;
   background-color: #17e417;
   border: none;
@@ -49,14 +69,15 @@ header {
   cursor: pointer;
   transition: all 0.3s ease 0s;   
 }
-.btn1:hover, #profile-txt:hover {
+.btn1:hover, .profile-txt:hover {
   background-color: #1ba51b;
 }
 /* Body*/
 body{
-  background-color: rgb(82, 80, 80);
+  background-color: #424542;  
 }
 .content{
+  background-image: linear-gradient(black, #424542);
   color: white;
   font-size: 20px;
   padding: 15px 5%;
@@ -71,4 +92,35 @@ body{
 #profile-name-c2, #profile-email-c2,
 #profile-join-c2{
   width: 500px;
+}
+@media(max-width: 850px){
+  .nav-bar{
+    display: block;
+    position: absolute;
+    background-color: #424542;
+    top: 70px;
+    width: 100%;
+    height: 0px;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease 0s;
+    overflow: hidden;
+  }
+  .nav-bar.active{
+    height: 450px;
+  }
+  .nav-bar-sub{
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+  }
+  .nav-links li {
+    display: block;
+    margin: 10% 0px;
+  }
+  .bar-btn{
+    display: block;
+  }
 }
